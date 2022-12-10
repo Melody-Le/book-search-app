@@ -1,12 +1,12 @@
 import React from "react";
-import SearchBar from "../SearchBar/SearchBar";
 import { Grid } from "@mui/material";
+import Book from "../Book/Book";
 
 function MainBox() {
   return (
     <Grid item xs>
       <div>MainBox</div>
-      {/* <SearchBar /> */}
+      <Book />
     </Grid>
   );
 }
