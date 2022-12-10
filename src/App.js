@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { Typography, Grid, Box, Button } from "@mui/material";
+import TextField from "@mui/material/TextField";
+import Avatar from "@mui/material/Avatar";
+import SearchBar from "./components/SearchBar/SearchBar";
+
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchBar />
     </div>
   );
 }
