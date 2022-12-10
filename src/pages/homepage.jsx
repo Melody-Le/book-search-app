@@ -9,9 +9,9 @@ function Homepage() {
       <Grid
         container
         spacing={2}
+        paddingTop={1}
         sx={{
           backgroundColor: "yellow",
-          height: "100vh",
         }}
       >
         <SideBar />

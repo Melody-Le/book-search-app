@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import AspectRatio from "@mui/joy/AspectRatio";
 import Paper from "@mui/material/Paper";
 
-function Book(props) {
+function BookCard(props) {
   return (
     <Paper elevation={5} sx={{ borderRadius: 4 }}>
       <Box padding={1}>
@@ -31,7 +31,7 @@ function Book(props) {
           marginY={1}
           alignItems={"flex-start"}
         >
-          <Typography variant="body" className="product-name">
+          <Typography variant="body" className="book-name">
             "Book name"
           </Typography>
 
@@ -44,4 +44,4 @@ function Book(props) {
   );
 }
 
-export default Book;
+export default BookCard;
