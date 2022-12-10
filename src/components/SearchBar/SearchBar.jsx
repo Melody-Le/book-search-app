@@ -4,7 +4,6 @@ import TextField from "@mui/material/TextField";
 import Avatar from "@mui/material/Avatar";
 import TextareaAutosize from "@mui/material/TextareaAutosize";
 import Tesseract from "tesseract.js";
-import { createWorker } from "tesseract.js";
 
 function SearchBar() {
   const [isLoading, setIsLoading] = useState(false);
