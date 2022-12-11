@@ -2,16 +2,17 @@ import React from "react";
 import { Grid, Box } from "@mui/material";
 import BookCard from "../Book/BookCard";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import bookList from "../../utils/bookList";
 
 function MainBox() {
   const matches = useMediaQuery("(max-width:600px)");
   let booksToShow = [];
-  const books = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  if (books?.length) {
-    booksToShow = books.map((book, idx) => {
+  // const books = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  if (bookList?.length) {
+    booksToShow = bookList.map((book, idx) => {
       return (
-        <Grid key={idx} sm={6} md={4} lg={3} item>
-          <BookCard />
+        <Grid key={idx} sm={4} md={3} lg={3} item>
+          <BookCard data={book} />
         </Grid>
       );
     });
@@ -27,7 +28,7 @@ function MainBox() {
         padding: "1rem",
       }}
     >
-      <Grid container spacing={1} alignItems="center" justifyContent="center">
+      <Grid container spacing={2} alignItems="center" justifyContent="center">
         {booksToShow}
       </Grid>
     </Grid>
