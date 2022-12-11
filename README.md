@@ -4,7 +4,7 @@ A Website to store Personal Book,
 
 ## Demo link
 
-- [MyBooks - Demo Link](https://book-utj0.onrender.com/)https://book-utj0.onrender.com/
+- [MyBooks - Demo Link](https://book-utj0.onrender.com/): https://book-utj0.onrender.com/
 
 ## Tech Stack:
 

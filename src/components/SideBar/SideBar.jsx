@@ -1,10 +1,8 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
 import SearchBar from "../SearchBar/SearchBar";
-import useMediaQuery from "@mui/material/useMediaQuery";
 
 function SideBar() {
-  const matches = useMediaQuery("(max-width:600px)");
   return (
     <Grid
       item

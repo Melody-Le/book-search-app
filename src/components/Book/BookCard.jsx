@@ -22,7 +22,7 @@ function BookCard(props) {
 
         <Box mt={1}>
           <Typography variant="subtitle1" className="category-label">
-            Book category
+            Fiction Books
           </Typography>
         </Box>
         <Box
@@ -36,7 +36,7 @@ function BookCard(props) {
           </Typography>
 
           <Typography variant="subtitle1" className="price">
-            Price
+            Author:
           </Typography>
         </Box>
       </Box>
