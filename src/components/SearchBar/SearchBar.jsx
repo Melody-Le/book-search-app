@@ -27,46 +27,112 @@ function SearchBar() {
     }).then(({ data: { text } }) => {
       setTextConverted(text);
       setIsLoading(false);
+      setPreviewImgUrl(null);
     });
+  };
+  const handleSearch = (evnt) => {
+    evnt.preventDefault();
+    if (textConverted !== "") {
+      console.log(textConverted);
+      setTextConverted("");
+    }
+  };
+  const handleInputChange = (evnt) => {
+    setTextConverted(evnt.target.value);
   };
   return (
     <div>
       <Grid
-        md={4}
         item
         alignItems={"center"}
         justifyContent={"center"}
         marginX={{ xs: "auto" }}
       >
         {!isLoading && (
-          <Typography
-            variant="h5"
+          <Box
+            display="flex"
+            flexDirection={"column"}
+            alignItems={"center"}
+            sx={{ width: "100%" }}
+          >
+            <TextareaAutosize
+              maxRows={6}
+              minRows={1}
+              aria-label="minimum height"
+              value={textConverted}
+              onChange={handleInputChange}
+              style={{
+                width: "80%",
+                padding: "0.5rem 1rem",
+                marginX: "1rem",
+                marginY: "1rem",
+                borderRadius: "1rem",
+              }}
+              sx={{
+                width: "80%",
+                padding: "1rem",
+                marginX: "1rem",
+                marginY: "1rem",
+              }}
+            />
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "teal",
+                width: "80%",
+                color: "white",
+                borderRadius: "1rem",
+                marginY: "1rem",
+                padding: "8px",
+                ":hover": {
+                  border: "cyan",
+                  backgroundColor: "blue",
+                },
+              }}
+              component="label"
+              defaultValue={previewImgUrl}
+            >
+              {previewImgUrl ? "Change Image" : "Choose Image"}
+              <input
+                hidden
+                accept=".png, .jpeg, .jpg*"
+                type="file"
+                onChange={handleFileInput}
+              />
+            </Button>
+            {!previewImgUrl && (
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: "teal",
+                  width: "80%",
+                  color: "white",
+                  borderRadius: "1rem",
+                  padding: "8px",
+                  ":hover": {
+                    border: "cyan",
+                    backgroundColor: "blue",
+                  },
+                }}
+                onClick={handleSearch}
+              >
+                Search
+              </Button>
+            )}
+          </Box>
+        )}
+
+        {!isLoading && previewImgUrl && (
+          <Box
             sx={{
-              fontSize: "1.5rem",
-              fontWeight: 500,
-              textAlign: "center",
-              marginBottom: "1rem",
-              color: "black",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
             }}
           >
-            Image To Text
-          </Typography>
-        )}
-        {!isLoading && !textConverted && (
-          <Box display="flex" flexDirection={"column"} alignItems={"center"}>
-            <TextField
-              // onChange={handleInputChange}
-              required
-              hiddenLabel
-              // fullWidth
-              value=""
-              variant="filled"
-              size="small"
-              type="text"
-              name="username"
-            />
             <Avatar
               src={previewImgUrl}
+              variant="rounded"
               sx={{
                 width: 128,
                 height: 128,
@@ -75,23 +141,18 @@ function SearchBar() {
               }}
             />
             <Button
-              sx={{ fontWeight: "bold", textTransform: "none" }}
-              component="label"
-              defaultValue={previewImgUrl}
-              // onClick={handleConvert}
-            >
-              Select Image
-              <input
-                hidden
-                accept=".png, .jpeg, .jpg*"
-                type="file"
-                onChange={handleFileInput}
-              />
-            </Button>
-            <Button
-              sx={{ fontWeight: "bold", textTransform: "none" }}
-              component="label"
-              defaultValue={previewImgUrl}
+              variant="contained"
+              sx={{
+                backgroundColor: "teal",
+                width: "80%",
+                color: "white",
+                borderRadius: "1rem",
+                padding: "8px",
+                ":hover": {
+                  border: "cyan",
+                  backgroundColor: "blue",
+                },
+              }}
               onClick={handleConvert}
             >
               Convert
@@ -112,17 +173,6 @@ function SearchBar() {
             >
               is Loading {progress}
             </Typography>
-          </Box>
-        )}
-        {!isLoading && textConverted && (
-          <Box>
-            <TextareaAutosize
-              maxRows={6}
-              minRows={6}
-              aria-label="minimum height"
-              value={textConverted}
-              style={{ width: 200 }}
-            />
           </Box>
         )}
       </Grid>
