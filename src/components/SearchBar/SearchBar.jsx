@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Typography, Grid, Box, Button } from "@mui/material";
-import TextField from "@mui/material/TextField";
 import Avatar from "@mui/material/Avatar";
 import TextareaAutosize from "@mui/material/TextareaAutosize";
 import Tesseract from "tesseract.js";
