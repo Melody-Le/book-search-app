@@ -28,7 +28,13 @@ function MainBox() {
         padding: "1rem",
       }}
     >
-      <Grid container spacing={2} alignItems="center" justifyContent="center">
+      <Grid
+        container
+        spacing={2}
+        marginLeft={1}
+        alignItems="center"
+        justifyContent="center"
+      >
         {booksToShow}
       </Grid>
     </Grid>

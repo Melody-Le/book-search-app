@@ -11,7 +11,7 @@ function Homepage() {
         spacing={2}
         paddingTop={1}
         sx={{
-          backgroundColor: "yellow",
+          backgroundColor: "rgba(0, 157, 142, 0.3)",
         }}
       >
         <SideBar />
